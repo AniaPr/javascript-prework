@@ -1,7 +1,3 @@
-const buttonRock = document.getElementById("button-rock");
-const buttonPaper = document.getElementById("button-paper");
-const buttonScissors = document.getElementById("button-scissors");
-
 function buttonClicked(argButtonName) {
 	clearMessages();
 	console.log(argButtonName + " został kliknięty");
@@ -54,12 +50,17 @@ function buttonClicked(argButtonName) {
 	displayResult(playerMove, computerMove);
 }
 
-const buttonRock.addEventListener("click", function () {
+const buttonRock = document.getElementById("button-rock");
+buttonRock.addEventListener("click", function () {
 	buttonClicked("kamień");
 });
-const buttonPaper.addEventListener("click", function () {
+
+const buttonPaper = document.getElementById("button-paper");
+buttonPaper.addEventListener("click", function () {
 	buttonClicked("papier");
 });
-const buttonScissors.addEventListener("click", function () {
+
+const buttonScissors = document.getElementById("button-scissors");
+buttonScissors.addEventListener("click", function () {
 	buttonClicked("nożyce");
 });
