@@ -27,11 +27,11 @@ function buttonClicked(argButtonName) {
 				", " +
 				argComputerMove
 		);
-		if (argPlayerMove == "papier" && argComputerMove == "kamień") {
-			printMessage("Wygrywasz!");
-		} else if (argPlayerMove == "kamień" && argComputerMove == "nożyce") {
-			printMessage("Wygrywasz!");
-		} else if (argPlayerMove == "nożyce" && argComputerMove == "papier") {
+		if (
+			(argPlayerMove == "papier" && argComputerMove == "kamień") ||
+			(argPlayerMove == "kamień" && argComputerMove == "nożyce") ||
+			(argPlayerMove == "nożyce" && argComputerMove == "papier")
+		) {
 			printMessage("Wygrywasz!");
 		} else if (argPlayerMove == argComputerMove) {
 			printMessage("Remis! ");
@@ -43,9 +43,9 @@ function buttonClicked(argButtonName) {
 
 	let playerMove = argButtonName;
 	console.log("ruch gracza to: " + playerMove);
-	let randomNumber = Math.floor(Math.random() * 3 + 1);
+	const randomNumber = Math.floor(Math.random() * 3 + 1);
 	console.log("wylosowana liczba to: " + randomNumber);
-	let computerMove = getMoveName(randomNumber);
+	const computerMove = getMoveName(randomNumber);
 	console.log("ruch komputera to: " + computerMove);
 	displayResult(playerMove, computerMove);
 }
